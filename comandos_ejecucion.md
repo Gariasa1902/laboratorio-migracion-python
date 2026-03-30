@@ -14,3 +14,19 @@ Para trabajar o revisar una etapa específica:
 - Etapa 1: `python etapa1/main.py`
 - Etapa 2: `python etapa2/migracion_basica.py`
 - Etapa 3: `python etapa3/etl_modular.py`
+
+## Levantar Bases de Datos (Docker)
+Si reinicias el computador, asegúrate de levantar las bases de datos antes de correr el código:
+`docker compose up -d`
+
+Para detenerlas cuando termines de trabajar:
+`docker compose down`
+
+## Credenciales Locales
+**PostgreSQL (Destino):**
+- Host: localhost | Puerto: 5432
+- DB: db_destino | Usuario: usuario_ape | Pass: password123
+
+**Oracle (Origen):**
+- Host: localhost | Puerto: 1521
+- Service: XEPDB1 | Usuario: system | Pass: password123

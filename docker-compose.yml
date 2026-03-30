@@ -1,0 +1,22 @@
+services:
+  # Base de datos destino: PostgreSQL
+  postgres_ape:
+    image: postgres:15
+    container_name: postgres_destino_ape
+    environment:
+      POSTGRES_USER: usuario_ape
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: db_destino
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+  # Base de datos origen: Oracle (Usamos una imagen ligera de Oracle XE)
+  oracle_ape:
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle_origen_ape
+    environment:
+      ORACLE_PASSWORD: password123
+    ports:
+      - "1521:1521"
+    restart: unless-stopped
